@@ -57,5 +57,14 @@ public:
             return;
         }
 
+        // tep 6: if the value in the data field of new node is less than that of parent
+        if (x < parent->info)
+        {
+            // 6a: make the left child of parent point to new node
+            parent->leftchild = newNode;
+
+            // 6b: Exit
+            return;
+        }
     }
 };
