@@ -139,4 +139,9 @@ public:
         inorder(ptr->rightchild); // Traverse right subtree
         cout << ptr->info << " "; // Visit node
     }
+
+    bool isEmpty()
+    {
+        return ROOT == nullptr; // Check if the root is null
+    }
 };
