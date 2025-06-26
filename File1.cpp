@@ -25,4 +25,37 @@ public:
     {
         ROOT = nullptr; // Initialize root to null
     }
+
+    void insert()
+    {
+        int x;
+        cout << "Masukan nilai: ";
+        cin >> x;
+
+        // step 1: Allocate memory for a new node
+        Node *newNode = new Node();
+
+        // step 2: Assign value to the data field of the new node
+        newNode->info = x;
+
+        // step 3: Make the left and right child of the new node point to null
+        newNode->leftchild = nullptr;
+        newNode->rightchild = nullptr;
+
+        // step 4: Locate the node which will be the parent of the node to be inserted
+        Node *parent = nullptr;
+        Node *currentNode = nullptr;
+        search(x, parent, currentNode);
+        
+        //step 5: if parent is NULL (Tree is empty)
+        if (parent == nullptr)
+        {
+            // 5a: mark the new node as root
+            ROOT = newNode;
+
+            // 5b: Exit
+            return;
+        }
+
+    }
 };
